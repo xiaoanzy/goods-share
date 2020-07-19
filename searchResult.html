@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="keywords" content="优卷啦,天猫优惠券,淘宝优惠券,优惠券,淘宝网优惠券,淘宝优惠,淘宝优惠券去哪里领,淘宝优惠券领取网站">
+		<meta name="description" content="优卷啦是淘宝网优惠券天猫优惠券领取网站,下单直接抵扣,全网淘宝优惠券直接领取,价格超实惠。每天更新千万淘宝优惠券,天猫优惠券及商品,让淘宝天猫购物更优惠,让优惠触手可及,找优惠券尽在优卷啦淘宝优惠券领取网站">
+		<meta http-equiv="Expires" content="0">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-control" content="no-cache">
+		<meta http-equiv="Cache" content="no-cache">
+		<title>优卷啦-搜索结果-淘宝天猫优惠券领取网站平台</title>
+		<script src="./js/static/vue/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/md5.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/static/html/common.js?v=v1" type="text/javascript" charset="utf-8"></script>
+		<link href="./css/searchResult.css?v=v1" rel="stylesheet" type="text/css" />
+		<link href="./css/all.css?v=v1" rel="stylesheet" type="text/css" />
+	</head>
+	<body class="body">
+		<div class="container">
+			<!-- v-on:mouseover="indexMousemove" -->
+			<div class="backgroundColor">
+				<div class="head">
+					<div id="headZhuYeImg">
+						<a href="index.html">
+							<img src="./img/lg.png" />
+						</a>
+					</div>
+					<div class="searchSubitFormNow">
+						<form id="searchSubitForm" method="get" action="./searchResult.html">
+							<input type="hidden" name="pageIndex" value="1" />
+							<input type="hidden" name="pageSize" value="40" />
+							<input id="searchTextId" name="goodsName" type="text" value="" /><input id="searchTextSubmitId" type="submit"
+							 value="搜 索" />
+						</form>
+					</div>
+				</div>
+				<!-- 页面主体 -->
+				<div class="zhuTi">
+					<!-- 导航条 -->
+					<div class="nav">
+						<ul id="indexClassificationNav">
+							<li class="navNow_1"><a href="index.html">主 页</a></li>
+							<li><a href="./categoryResult.html?navType=price9">9块 9包邮</a></li>
+							<li><a href="./categoryResult.html?navType=hotGoods">人气 商 品</a></li>
+							<li><a href="./categoryResult.html?navType=newGoods">新折扣商品</a></li>
+						</ul>
+					</div>
+
+					<div class="searchResultPathText">
+						<a href="./categoryResult.html?categoryType=all">全部商品</a> / 共<span style="color: red;">{{ goodsCount }}</span>款相关商品
+					</div>
+
+
+					<div class="heatSearchText">
+						<span id="tempText">热门搜索：</span>
+						<span v-for="itme in hotKeywordNameList"><a :href="'./searchResult.html?goodsName=' + itme">{{ itme }}</a></span>
+					</div>
+					<div class="chooseSearchData">
+						<div class="chooseSearchDataA">
+							<!--
+							screening
+							all=综合
+							sales=销量
+							new=新品
+							-->
+							<a id="hzsp" href="javascript:screeningByType('all');">综合</a>
+							<a id="xlsp" href="javascript:screeningByType('sales');">销量</a>
+							<a id="xpsp" href="javascript:screeningByType('new');">新品</a>
+							<a id="jgsp" href="javascript:screeningByType('discounts');">价格
+								<!-- ↑↓ --></a>
+						</div>
+						<div style="width: 10px;float: left;">&nbsp;</div>
+						<div class="chooseSearchDataInput">
+							<input id="startScreeningPrice" style="width: 30px;" type="text" value="" placeholder="￥" />&nbsp;-
+							<input id="endScreeningPrice" style="width: 30px;" type="text" value="" placeholder="￥" />
+							<input class="buttonNone" id="chooseSearchDataInputOKButton" onclick="priceScreening();" type="button" value="确认" />
+							<input class="buttonNone" id="chooseSearchDataInputClearButton" type="button" onclick="clearPriceBychooseSearchDataInputClearButton()"
+							 value="清除" />
+						</div>
+					</div>
+					<div class="goodsInfo">
+
+						<ul class="goodsInfoArray">
+							<li v-for="itme in goodsInfoList">
+								<!-- <a href="/aa.html?fGoodsId=itme.fGoodsId">  background-color: rgb(255,255,255); ?goodsId=-->
+								<a :href="'./goodsDetailed.html?id='+itme.id" target="_blank">
+									<div>
+										<img id="goodsMianImg" :src="itme.fGoodsImage | filterImage" />
+									</div>
+									<div class="goodsInfoTitle">
+										{{ itme.fGoodsName | filterFun }} <!-- 商品标题 -->
+									</div>
+									<div class="goodsInfoSegmentation"></div>
+									<div>
+										<!-- class="goodsInfoMoney"-->
+										<p class="goodsInfoMoneyAfter">￥{{ itme.fGoodsPrice | filterCouponToFixed(itme.fGoodsCouponFaceValue) }}</p>
+										<p class="goodsInfoMoneyBefore">￥{{ itme.fGoodsPrice }}</p>
+									</div>
+									<div>
+										<p class="salesTitile">销量：<span class="sales">{{ itme.fGoodsSalesCount }}</span></p>
+										<p class="moneySecuritiesTitile"><span class="moneySecurities">{{ itme.fGoodsCouponFaceValue }}</span>元</p>
+									</div>
+								</a>
+							</li>
+
+						</ul>
+					</div>
+
+					<div class="page">
+						<!--
+						有15也商品
+						
+						vueThis.currentPage = doGetResultObj['currentPage'];
+						vueThis.totalPages = doGetResultObj['totalPages'];
+						vueThis.totalCount = doGetResultObj['totalCount'];
+						vueThis.nextPage = doGetResultObj['nextPage'];
+						vueThis.prefPage = doGetResultObj['prefPage'];
+						-->
+						<div id="pager" class="pager">
+							<a class="pre-page" v-on:click="changePage(prefPage,false)">上一页</a>
+							<a v-for="(itme,i) in totalPages" class="item cur" v-on:click="changePage(currentPage+i+1,true)">{{currentPage+i+1}}</a>
+							<a class="next-page" v-on:click="changePage(nextPage,false)">下一页</a>
+							<a class="item" v-on:click="changePage(currIndex,true)">{{currIndex}}</a>
+						</div>
+
+						<!-- 						<div id="pager" class="pager">
+							<a class="pre-page" href="javascript:void(0);">上一页</a>
+							<a class="item cur" href="javascript:void(0);">1</a>
+							<a class="item" href="/index.php?r=l&amp;page=2">2</a>
+							<a class="item" href="/index.php?r=l&amp;page=3">3</a>
+							<a class="item" href="/index.php?r=l&amp;page=4">4</a>
+							<a class="item" href="/index.php?r=l&amp;page=5">5</a>
+							<a class="item" href="/index.php?r=l&amp;page=6">6</a>
+							<a class="item more" href="javascript:void(0);">...</a>
+							<a class="item" href="/index.php?r=l&amp;page=890">890</a>
+							<a class="next-page" href="/index.php?r=l&amp;page=2">下一页</a>
+						</div> -->
+					</div>
+
+					<div class="footer">
+						<div class="pageHref">
+							<ul>
+								<li>本站导航：</li>
+								<!-- <li><a href="#">测试</a></li>
+								<li><a href="#">测试</a></li>
+								<li><a href="#">测试</a></li>
+								<li><a href="#">测试</a></li>
+								<li><a href="#">测试</a></li>
+								<li><a href="#">测试</a></li> -->
+							</ul>
+						</div>
+						<div class="pageInfo">
+							<!-- <p align="center"></p> -->
+							<p align="center">Copyright © 2012-2019 优劵啦 版权所有</p>
+							<p align="center"><img src="img/gaba.png" /><a>湘ICP备20001467号-1</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" charset="UTF-8" src="./js/static/html/searchResult.js?v=v1"></script>
+</html>

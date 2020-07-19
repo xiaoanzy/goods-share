@@ -1,0 +1,143 @@
+* {
+	margin: 0 auto;
+	padding: 0;
+}
+
+body {
+	background-color: #F6F6F6;
+	max-width: 1200px;
+	min-width: 1200px;
+	font-family: 'Microsoft YaHei';
+}
+
+.backgroundColor {
+	height: 100%;
+	width: 100%;
+	background-color: #F6F6F6;
+}
+
+.footer {
+	margin-top: 1.5625rem;
+	/* background-color: #EEEEEE; */
+	color: rgb(255, 255, 255);
+}
+
+.pageInfo {
+	color: rgb(255, 255, 255);
+	font-size: 14px;
+	line-height: 40px;
+	height: 5.20rem;
+	background-color: rgb(68, 68, 68);
+}
+
+.pageHref {
+	color: #555555;
+	height: 100px;
+	background-color: rgb(68, 68, 68);
+}
+
+.footer .pageHref ul li a {
+	color: #555555;
+	text-decoration: none;
+}
+
+.pageHref {
+	color: rgb(255, 255, 255);
+}
+
+.footer {
+	color: rgb(255, 255, 255);
+}
+/* .pageHref ul li  a{
+	color: rgb(255, 255, 255);
+} */
+.footer .pageHref ul li {
+
+	font-size: 0.625rem;
+	padding: 1.25rem;
+	float: left;
+}
+
+.footer .pageHref ul {
+	display: block;
+	list-style-type: none;
+}
+
+.page .pager {
+	display: inline-block;
+}
+
+.page {
+	 
+	text-align: center;
+}
+.goodsInfo{
+	overflow: hidden;
+	/* border: 1px solid red; */
+}
+
+.page .pager a {
+	cursor: pointer;
+	text-decoration: none;
+	padding: 10px;
+	color: #999999;
+	font-size: 0.875rem;
+	border: 0.09rem solid rgb(225, 225, 225);
+	border-radius: 0.24rem;
+}
+
+#controlNav ul li:hover {
+	cursor: pointer;
+}
+
+#controlNav ul li {
+	float: right;
+	position: fixed;
+	left: 1300px;
+	width: 22px;
+	height: 25px;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid #888888;
+	list-style-type: none;
+}
+
+#controlNav ul {
+	z-index: 1000;
+}
+
+.fade-enter {
+	opacity: 0;
+}
+
+.fade-enter-active {
+	transition: opacity 5s;
+}
+
+.fade-leave-to {
+	opacity: 0;
+}
+
+.fade-leave-active {
+	transition: opacity 5s;
+}
+
+.goodsInfoArray li a {
+	font-size: 0.8rem;
+	color: #666;
+	color: ;
+	text-decoration: none;
+}
+
+.head {
+	background-color: rgb(255, 255, 255);
+	height: 100px;
+}
+
+#goodsMianImg {
+	width: 200px;
+	height: 200px;
+}
+
+.footer {
+	background-color: color: rgb(68, 68, 68);
+}

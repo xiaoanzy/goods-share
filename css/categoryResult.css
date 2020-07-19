@@ -1,0 +1,258 @@
+/* .head {
+	background-color: #FFFFFF;
+	height: 100px;
+} */
+
+.head>#searchSubitForm,
+.head>#headZhuYeImg {
+	float: left;
+}
+
+.head .searchSubitFormNow {
+	padding: 2% 0 0 30%;
+}
+
+#searchSubitForm #searchTextSubmitId {
+	color: rgb(255, 255, 255);
+	width: 80px;
+	background-color: rgb(255, 102, 1);
+	height: 38px;
+	border-left: 2px solid rgb(255, 102, 1);
+	border-right: 5px solid rgb(255, 102, 1);
+	border-top: 1px solid rgb(255, 102, 1);
+	border-bottom: 3px solid rgb(255, 102, 1);
+}
+
+#searchSubitForm #searchTextId {
+	border: 2px solid rgb(255, 102, 1);
+	width: 350px;
+	height: 33px;
+}
+
+#indexClassificationNav li a {
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+}
+
+#indexClassificationNav li:hover {
+	cursor: pointer;
+	background-color: #ee5c00;
+}
+
+#indexClassificationNav li {
+	padding: 1% 30px;
+	height: 1.55rem;
+	text-align: center;
+	list-style-type: none;
+	float: left;
+}
+
+#indexClassificationNav {
+	height: 50px;
+	width: 100%;
+	background-color: rgb(255, 102, 1);
+}
+
+
+ 
+
+.nav #indexClassificationNav .li_index {
+	width: 9rem;
+	background-color: #ee5c00;
+}
+
+.goodsInfo {
+
+	margin-top: 2.5rem;
+	margin-bottom: 2.5rem;
+}
+
+.goodsInfo .goodsInfoArray {
+	overflow: hidden;
+	/* float: left; */
+	list-style-type: none;
+	/* height: 25.75rem; */
+	/* height: auto; */
+
+}
+
+.goodsInfo .goodsInfoArray li div {
+	clear: both;
+}
+
+
+.goodsInfo .goodsInfoArray li {
+	background-color: #FFFFFF;
+	/* transition: opacity 0.5s; */
+	margin-left: 0.9rem;
+	margin-bottom: 0.625rem;
+	float: left;
+	border: 0.0625rem solid #EEEEEE;
+	padding: 10px;
+
+}
+
+/* .goodsInfo .goodsInfoArray li :hover {
+	border: 0.0625rem solid #666666;
+} */
+
+.goodsInfo .goodsInfoArray li .goodsInfoMoneyAfter {
+	float: left;
+	color: red;
+	font-size: 1.50rem;
+	font-weight: bold;
+}
+
+.goodsInfo .goodsInfoArray li .goodsInfoMoneyBefore {
+	float: right;
+	font-size: 0.8rem;
+	color: #888888;
+	text-decoration: line-through;
+	line-height: 30px;
+}
+
+.goodsInfo .goodsInfoArray li div .salesTitile {
+	font-size: 0.8rem;
+	color: #888888;
+	float: left;
+}
+
+.goodsInfo .goodsInfoArray li div .moneySecuritiesTitile {
+	font-size: 0.8rem;
+	color: #888888;
+	float: right;
+}
+
+.goodsInfoSegmentation {
+	border-top: 0.0625rem solid #EEEEEE;
+}
+
+
+
+
+#indexNavImg {}
+
+/*圆形按钮属性设定*/
+.tab-btn {
+	position: absolute;
+	top: 28rem;
+	left: 600px;
+	/* left: 50%; */
+	width: 120px;
+	height: 30px;
+
+
+
+}
+
+.tab-btn .btn {
+
+	float: left;
+	width: 6px;
+	height: 6px;
+	background: #868686;
+	border: 2px solid #c3c3c3;
+	/*边框*/
+	margin-left: 10px;
+	border-radius: 50%;
+}
+
+/*圆形按钮触碰事件*/
+.tab-btn .btn:hover {
+	background: #e4e4e4;
+	border-color: #7f7f7f;
+}
+
+.tab-btn .active {
+	background: #e4e4e4;
+	border-color: #7f7f7f;
+}
+
+.tab-btn ul {
+
+
+	list-style-type: none;
+}
+
+#indexHtmlgoodGoodsXiaHuaXian {
+	border-bottom: 0.0625rem solid #EEEEEE;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+	margin-top: 0.25rem;
+
+}
+
+#indexHtmlgoodGoods {
+	padding-bottom: 0.625rem;
+}
+
+#indexHtmlgoodGoods span {
+	padding-left: 1rem;
+	color: #888888;
+	font-weight: bold;
+	font-size: 1.25rem;
+}
+
+.classificationGoods #goodsList li a {
+	color: #333333;
+	text-decoration: none;
+}
+
+.classificationGoods #goodsList li:hover {
+	border-bottom: 1px solid #FF6601;
+	color: #FF6601;
+}
+
+.categoryNameTextColor{
+	border-bottom: 1px solid #FF6601;
+	color: #FF6601;
+}
+
+.classificationGoods #goodsList li a:hover {
+	/* border-bottom: 1px solid #FF6601; */
+	color: #FF6601;
+}
+
+.classificationGoods #goodsList li {
+	border-bottom: 1px solid #FFFFFF;
+	padding: 12px 25px;
+	float: left;
+	list-style-type: none;
+}
+
+.classificationGoods #goodsList {
+	font-size: 0.95rem;
+	border-radius: 0.3rem;
+	background-color: rgb(255, 255, 255);
+	overflow: hidden;
+	/* border-bottom: 1px solid #e1e1e1; */
+	list-style-type: none;
+}
+
+.goodsScreening ul {
+	font-size: 0.95rem;
+	border-radius: 0.3rem;
+	background-color: rgb(255, 255, 255);
+	overflow: hidden;
+	margin-top: 15px;
+}
+
+.goodsScreening ul li {
+	padding: 5px 5px 5px 25px;
+	float: left;
+	list-style-type: none;
+}
+
+.goodsScreening ul li a {
+	color: #333333;
+	text-decoration: none;
+}
+
+.goodsScreening ul li a:hover {
+	color: #FF6601;
+	/* text-decoration: none; */
+}
+
+/* .classificationGoods #goodsList .sss {
+	background-color: red;
+} */

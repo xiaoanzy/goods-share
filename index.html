@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="keywords" content="优卷啦,天猫优惠券,淘宝优惠券,优惠券,淘宝网优惠券,淘宝优惠,淘宝优惠券去哪里领,淘宝优惠券领取网站">
+	<meta name="description"
+		content="优卷啦是淘宝网优惠券天猫优惠券领取网站,下单直接抵扣,全网淘宝优惠券直接领取,价格超实惠。每天更新千万淘宝优惠券,天猫优惠券及商品,让淘宝天猫购物更优惠,让优惠触手可及,找优惠券尽在优卷啦淘宝优惠券领取网站">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta http-equiv="Cache" content="no-cache">
+	<title>优卷啦-淘宝天猫优惠券领取网站平台</title>
+	<link href="./css/index.css?v=v1" rel="stylesheet" type="text/css" />
+	<link href="./css/all.css?v=v1" rel="stylesheet" type="text/css" />
+
+
+	<script src="./js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/static/vue/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/static/html/common.js?v=v1" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/md5.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body class="body">
+	<div class="container">
+		<!-- v-on:mouseover="indexMousemove" -->
+		<div class="backgroundColor">
+			<div class="head">
+				<div id="headZhuYeImg">
+					<a href="index.html">
+						<img src="./img/lg.png" />
+					</a>
+				</div>
+				<div class="searchSubitFormNow">
+					<form id="searchSubitForm" method="get" action="./searchResult.html">
+						<input type="hidden" name="pageIndex" value="1" />
+						<input type="hidden" name="pageSize" value="40" />
+						<input id="searchTextId" name="goodsName" type="text" value="" /><input id="searchTextSubmitId"
+							type="submit" value="搜 索" />
+
+					</form>
+				</div>
+			</div>
+			<!-- 页面主体 -->
+			<div class="zhuTi">
+				<!-- 导航条 -->
+				<div class="nav">
+					<ul id="indexClassificationNav">
+						<li class="navNow_1"><a href="index.html">主 页</a></li>
+						<li><a href="./categoryResult.html?navType=price9">9块 9包邮</a></li>
+						<li><a href="./categoryResult.html?navType=hotGoods">人气 商 品</a></li>
+						<li><a href="./categoryResult.html?navType=newGoods">新折扣商品</a></li>
+					</ul>
+				</div>
+				<!-- 商品分类 -->
+				<div class="classificationGoods">
+					<!-- <div class="classificationGoodsList"> -->
+					<ul id="goodsList">
+						<!-- <li><a href="./categoryResult.html?categoryType=all">全部</a></li> -->
+						<a href="./categoryResult.html?categoryType=femaleClothing">
+							<li>女装</li>
+						</a>
+						<a href="./categoryResult.html?categoryType=maleClothing">
+							<li>男装</li>
+						</a>
+						<a href="./categoryResult.html?categoryType=makeup">
+							<li>美妆</li>
+						</a>
+						<a href="./categoryResult.html?categoryType=footwear">
+							<li>鞋品</li>
+						</a>
+						<a href="./categoryResult.html?categoryType=bags">
+							<li>箱包</li>
+						</a>
+						<a href="./categoryResult.html?categoryType=accessories">
+							<li>配饰</li>
+						</a>
+						<a href="./categoryResult.html?categoryType=underwear">
+							<li>内衣</li>
+						</a>
+						<a href="./categoryResult.html?categoryType=daily">
+							<li>日用</li>
+						</a>
+						<a href="./categoryResult.html?categoryType=bady">
+							<li>母婴</li>
+						</a>
+						<a href="./categoryResult.html?categoryType=other">
+							<li>其他</li>
+						</a>
+					</ul>
+					<div id="indexNavImg">
+						<img style="display: none;" src="img/5e0ed211bd47b.png" width="759px" />
+						<img src="img/img1.jpg" width="759px" height="324px" />
+					</div>
+					<div class="tab-btn">
+						<ul>
+							<!-- <li class="btn"></li>
+							<li class="btn"></li>
+							<li class="btn"></li>
+							<li class="btn"></li> -->
+							<li class="btn"></li>
+						</ul>
+					</div>
+
+					<!-- </div> undefined-->
+				</div>
+
+				<div class="goodsInfo">
+					<div id="indexHtmlgoodGoods">
+						<span>9.9商品</span><a style="float: right; font-size: 6px;color: #ababab;text-decoration: none;"
+							href="./categoryResult.html?navType=price9">更多>></a>
+						<div id="indexHtmlgoodGoodsXiaHuaXian">
+						</div>
+					</div>
+					<ul class="goodsInfoArray">
+						<!-- categoryResult.html?categoryType=all -->
+						<li v-for="itme in preferentialGoodsInfoList">
+
+							<!-- <a href="/aa.html?fGoodsId=itme.fGoodsId">  ?goodsId=-->
+							<a :href="'./goodsDetailed.html?id='+itme.id" target="_blank">
+								<div>
+									<img height="200px" width="200px" :src="itme.fGoodsImage | filterImage" />
+								</div>
+								<div class="goodsInfoTitle">
+									{{ itme.fGoodsName | filterFun }}
+									<!-- 商品标题 -->
+								</div>
+								<div class="goodsInfoSegmentation"></div>
+								<div>
+									<!-- class="goodsInfoMoney"-->
+									<p class="goodsInfoMoneyAfter">
+										￥{{ itme.fGoodsPrice | filterCouponToFixed(itme.fGoodsCouponFaceValue) }}</p>
+									<p class="goodsInfoMoneyBefore">￥{{ itme.fGoodsPrice }}</p>
+								</div>
+								<div>
+									<p class="salesTitile">销量：<span class="sales">{{ itme.fGoodsSalesCount }}</span></p>
+									<p class="moneySecuritiesTitile"><span
+											class="moneySecurities">{{ itme.fGoodsCouponFaceValue }}</span>元</p>
+								</div>
+							</a>
+
+						</li>
+
+					</ul>
+				</div>
+				<div class="goodsInfo">
+					<div id="indexHtmlgoodGoods">
+						<span>精选商品</span><a style="float: right; font-size: 6px;color: #ababab;text-decoration: none;"
+							href="./categoryResult.html?categoryType=all">更多>></a>
+						<div id="indexHtmlgoodGoodsXiaHuaXian">
+						</div>
+					</div>
+					<ul class="goodsInfoArray">
+
+						<li v-for="itme in goodsInfoList">
+
+							<!-- <a href="/aa.html?fGoodsId=itme.fGoodsId">  ?goodsId=-->
+							<a :href="'./goodsDetailed.html?id='+itme.id" target="_blank">
+								<div>
+									<img height="200px" width="200px" :src="itme.fGoodsImage | filterImage" />
+								</div>
+								<div class="goodsInfoTitle">
+									{{ itme.fGoodsName | filterFun }}
+									<!-- 商品标题 -->
+								</div>
+								<div class="goodsInfoSegmentation"></div>
+								<div>
+									<!-- class="goodsInfoMoney"-->
+									<p class="goodsInfoMoneyAfter">
+										￥{{ itme.fGoodsPrice | filterCouponToFixed(itme.fGoodsCouponFaceValue) }}</p>
+									<p class="goodsInfoMoneyBefore">￥{{ itme.fGoodsPrice }}</p>
+								</div>
+								<div>
+									<p class="salesTitile">销量：<span class="sales">{{ itme.fGoodsSalesCount }}</span></p>
+									<p class="moneySecuritiesTitile"><span
+											class="moneySecurities">{{ itme.fGoodsCouponFaceValue }}</span>元</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div id="controlNav">
+					<ul>
+						<li><img onclick="pageScroll()" src="img/top.png" /></li>
+					</ul>
+				</div>
+				<!-- <div class="page">
+						<div id="pager" class="pager">
+							<a class="pre-page" href="javascript:void(0);">上一页</a>
+							<a class="item cur" href="javascript:void(0);">1</a>
+							<a class="item" href="/index.php?r=l&amp;page=2">2</a>
+							<a class="item" href="/index.php?r=l&amp;page=3">3</a>
+							<a class="item" href="/index.php?r=l&amp;page=4">4</a>
+							<a class="item" href="/index.php?r=l&amp;page=5">5</a>
+							<a class="item" href="/index.php?r=l&amp;page=6">6</a>
+							<a class="item more" href="javascript:void(0);">...</a>
+							<a class="item" href="/index.php?r=l&amp;page=890">890</a>
+							<a class="next-page" href="/index.php?r=l&amp;page=2">下一页</a>
+						</div>
+					</div> -->
+
+				<div class="footer">
+					<div class="pageHref">
+						<ul>
+							<li>本站导航：</li>
+							<!-- 	<li><a href="#">测试</a></li>
+								<li><a href="#">测试</a></li>
+								<li><a href="#">测试</a></li>
+								<li><a href="#">测试</a></li>
+								<li><a href="#">测试</a></li>color: rgb(68, 68, 68);
+								<li><a href="#">测试</a></li> -->
+						</ul>
+					</div>
+					<div class="pageInfo">
+						<!-- <p align="center"></p> -->
+						<p align="center">Copyright © 2012-2019 优劵啦 版权所有</p>
+						<p align="center"><img src="img/gaba.png" /><a>湘ICP备20001467号-1</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" charset="UTF-8" src="./js/static/html/index.js?v=v1"></script>
+
+</html>
