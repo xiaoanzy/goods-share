@@ -1,6 +1,6 @@
 # goods-share
 > ## 简介
-goods-share-manage是一个goods-share优惠卷分享的管理后台用于管理平台的商品。
+goods-share是个优惠卷分享站点，每天更新优惠卷商品让用户实惠购物。
 > ## 实现功能
 + **主页**
   + 用于返回主页面
